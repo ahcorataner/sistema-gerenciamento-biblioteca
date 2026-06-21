@@ -323,7 +323,7 @@ HAVING COUNT(l.id_livro) >= 2;
 <tr>
 <td align="center">
 
-<img src="figuras/consultahaving.png" width="500">
+<img src="figuras/consultahaving.png" width="400">
 
 </td>
 </tr>
@@ -406,7 +406,7 @@ Antes da execução do teste da trigger, foi realizada uma consulta para identif
 <tr>
 <td align="center">
 
-<img src="figuras/disponibilidade.png" width="500">
+<img src="figuras/disponibilidade.png" width="400">
 
 </td>
 </tr>
