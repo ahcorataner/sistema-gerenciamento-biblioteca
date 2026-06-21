@@ -163,17 +163,18 @@ O modelo conceitual foi elaborado utilizando a notação de Chen.
 <em><strong>Figura 2.</strong> Modelo Conceitual do Sistema de Gerenciamento de Biblioteca.</em>
 
 </div>
+
 ## Análise do Modelo Conceitual
 
 O modelo conceitual representa uma abstração de alto nível do domínio do problema, descrevendo as principais entidades envolvidas no gerenciamento de uma biblioteca e os relacionamentos existentes entre elas. Desenvolvido utilizando a notação Entidade-Relacionamento (ER) de Chen, esse modelo tem como objetivo capturar os requisitos informacionais do sistema independentemente de aspectos de implementação ou de um Sistema Gerenciador de Banco de Dados (SGBD) específico.
 
-A entidade **Usuário** foi modelada como entidade genérica, permitindo a especialização em **Aluno** e **Professor**, característica que possibilita representar diferentes perfis de usuários mantendo atributos comuns centralizados. Essa abordagem reduz redundâncias e favorece a consistência dos dados.
+A entidade **Usuário** foi modelada como entidade genérica, permitindo a especialização em **Aluno** e **Professor,** característica que possibilita representar diferentes perfis de usuários mantendo atributos comuns centralizados. Essa abordagem reduz redundâncias e favorece a consistência dos dados.
 
 A entidade **Livro** representa o acervo bibliográfico da biblioteca e está associada à entidade **Categoria** por meio de um relacionamento do tipo 1:N, indicando que uma categoria pode conter diversos livros, enquanto cada livro pertence a apenas uma categoria. Essa estrutura facilita a organização temática do acervo e a realização de consultas específicas.
 
 O relacionamento entre **Livro** e **Autor** foi modelado como N:N, uma vez que um livro pode possuir múltiplos autores e um autor pode participar da elaboração de diversas obras. Esse tipo de relacionamento é fundamental em sistemas bibliográficos e reflete adequadamente a realidade do domínio analisado.
 
-A entidade **Empréstimo** registra as transações realizadas pelos usuários, estabelecendo relacionamentos com as entidades **Usuário** e **Livro**. Essa modelagem possibilita o acompanhamento histórico das movimentações do acervo e constitui a base para o controle de disponibilidade das obras.
+A entidade **Empréstimo** registra as transações realizadas pelos usuários, estabelecendo relacionamentos com as entidades **Usuário** e **Livro.** Essa modelagem possibilita o acompanhamento histórico das movimentações do acervo e constitui a base para o controle de disponibilidade das obras.
 
 Dessa forma, o modelo conceitual fornece uma representação clara e consistente das regras de negócio da biblioteca, servindo como fundamento para as etapas subsequentes de modelagem lógica e implementação física.
 
@@ -207,7 +208,7 @@ O modelo lógico foi desenvolvido a partir da transformação sistemática do mo
 
 Nessa fase, cada entidade foi convertida em uma relação (tabela), sendo definidos os respectivos atributos e chaves primárias responsáveis pela identificação única de cada registro. Os relacionamentos do tipo 1:N foram implementados mediante a inclusão de chaves estrangeiras nas tabelas dependentes, garantindo a integridade referencial entre os dados.
 
-O relacionamento N:N existente entre as entidades **Livro** e **Autor** foi transformado em uma tabela associativa denominada **livro_autor**, cuja função é armazenar as associações entre livros e seus respectivos autores. Essa estratégia é amplamente utilizada em bancos de dados relacionais para representar relacionamentos muitos-para-muitos de forma normalizada.
+O relacionamento N:N existente entre as entidades **Livro** e **Autor** foi transformado em uma tabela associativa denominada **livro_autor,** cuja função é armazenar as associações entre livros e seus respectivos autores. Essa estratégia é amplamente utilizada em bancos de dados relacionais para representar relacionamentos muitos-para-muitos de forma normalizada.
 
 A especialização da entidade **Usuário** em **Aluno** e **Professor** foi implementada por meio de tabelas específicas vinculadas à tabela principal através de chaves primárias compartilhadas, preservando a herança dos atributos comuns e permitindo a representação adequada dos diferentes perfis de usuários.
 
@@ -279,7 +280,7 @@ FROM emprestimo;
 <tr>
 <td align="center">
 
-<img src="figuras/funcaoagregada.png" width="700">
+<img src="figuras/funcaoagregada.png" width="500">
 
 </td>
 </tr>
@@ -293,9 +294,9 @@ FROM emprestimo;
 
 ## Análise da Consulta com Função Agregada
 
-A consulta apresentada utiliza a função agregada **COUNT()**, responsável por contabilizar a quantidade total de registros presentes na tabela de empréstimos. Funções agregadas são amplamente empregadas em bancos de dados relacionais para a obtenção de métricas estatísticas e indicadores operacionais.
+A consulta apresentada utiliza a função agregada **COUNT(),** responsável por contabilizar a quantidade total de registros presentes na tabela de empréstimos. Funções agregadas são amplamente empregadas em bancos de dados relacionais para a obtenção de métricas estatísticas e indicadores operacionais.
 
-Nesse contexto, a consulta permite determinar o volume total de empréstimos registrados no sistema, fornecendo uma visão quantitativa da utilização do acervo bibliográfico. Conforme apresentado na Figura 5, o banco de dados retornou o valor **3**, indicando que três empréstimos foram registrados durante a fase de testes do sistema.
+Nesse contexto, a consulta permite determinar o volume total de empréstimos registrados no sistema, fornecendo uma visão quantitativa da utilização do acervo bibliográfico. Conforme apresentado na Figura 5, o banco de dados retornou o valor **3,** indicando que três empréstimos foram registrados durante a fase de testes do sistema.
 
 Informações desse tipo podem ser utilizadas para fins administrativos, acompanhamento de desempenho da biblioteca e geração de relatórios gerenciais. A simplicidade da consulta demonstra a capacidade do banco de dados em realizar operações analíticas diretamente sobre os dados armazenados, sem a necessidade de processamento adicional por aplicações externas.
 
@@ -322,7 +323,7 @@ HAVING COUNT(l.id_livro) >= 2;
 <tr>
 <td align="center">
 
-<img src="figuras/consultahaving.png" width="700">
+<img src="figuras/consultahaving.png" width="500">
 
 </td>
 </tr>
@@ -340,9 +341,9 @@ A consulta apresentada utiliza as cláusulas **GROUP BY** e **HAVING** para real
 
 Inicialmente, os registros são agrupados de acordo com a descrição da categoria, permitindo a contagem da quantidade de livros pertencentes a cada grupo. Em seguida, a cláusula **HAVING** atua como um filtro aplicado sobre os resultados agregados, retornando apenas as categorias que possuem duas ou mais obras cadastradas.
 
-Conforme apresentado na Figura 6, as categorias **Literatura**, **Computação** e **Medicina** satisfazem a condição estabelecida pela consulta, possuindo respectivamente 2, 3 e 2 livros cadastrados no sistema.
+Conforme apresentado na Figura 6, as categorias **Literatura,** **Computação** e **Medicina** satisfazem a condição estabelecida pela consulta, possuindo respectivamente 2, 3 e 2 livros cadastrados no sistema.
 
-Diferentemente da cláusula **WHERE**, que atua antes do agrupamento dos dados, a cláusula **HAVING** permite estabelecer condições sobre valores resultantes de funções agregadas, sendo fundamental em consultas analíticas e relatórios estatísticos.
+Diferentemente da cláusula **WHERE,** que atua antes do agrupamento dos dados, a cláusula **HAVING** permite estabelecer condições sobre valores resultantes de funções agregadas, sendo fundamental em consultas analíticas e relatórios estatísticos.
 
 Esse tipo de consulta possibilita identificar categorias com maior representatividade no acervo, contribuindo para análises relacionadas à organização e gestão bibliográfica.
 
@@ -365,7 +366,7 @@ Responsável por retornar a quantidade de empréstimos realizados por determinad
 <tr>
 <td align="center">
 
-<img src="figuras/testefuncao.png" width="700">
+<img src="figuras/testefuncao.png" width="500">
 
 </td>
 </tr>
@@ -381,7 +382,7 @@ Responsável por retornar a quantidade de empréstimos realizados por determinad
 
 A função armazenada **quantidade_emprestimos()** foi desenvolvida com o objetivo de encapsular uma regra de consulta frequentemente utilizada no sistema. Seu propósito é retornar a quantidade total de empréstimos associados a um determinado usuário, recebendo como parâmetro o identificador correspondente.
 
-Na Figura 7 observa-se a execução da função para o usuário de identificador 1, retornando o valor **1**. Esse resultado indica que o usuário possui um empréstimo registrado no sistema, comprovando o correto funcionamento da rotina implementada.
+Na Figura 7 observa-se a execução da função para o usuário de identificador 1, retornando o valor **1.** Esse resultado indica que o usuário possui um empréstimo registrado no sistema, comprovando o correto funcionamento da rotina implementada.
 
 A utilização de funções armazenadas promove maior reutilização de código, padronização das consultas e simplificação das operações realizadas pelas aplicações que acessam o banco de dados. Além disso, contribui para a centralização da lógica de negócio no próprio SGBD, reduzindo redundâncias e facilitando futuras manutenções.
 
@@ -405,7 +406,7 @@ Antes da execução do teste da trigger, foi realizada uma consulta para identif
 <tr>
 <td align="center">
 
-<img src="figuras/disponibilidade.png" width="700">
+<img src="figuras/disponibilidade.png" width="500">
 
 </td>
 </tr>
@@ -427,7 +428,7 @@ Em seguida, foi realizada uma tentativa de registrar um novo empréstimo para um
 <tr>
 <td align="center">
 
-<img src="figuras/testetrigger.png" width="700">
+<img src="figuras/testetrigger.png" width="500">
 
 </td>
 </tr>
@@ -443,7 +444,7 @@ Em seguida, foi realizada uma tentativa de registrar um novo empréstimo para um
 
 A trigger desenvolvida tem como finalidade garantir o cumprimento de uma importante regra de negócio do sistema: impedir que um livro indisponível seja novamente emprestado.
 
-Inicialmente, a Figura 8 demonstra que os livros previamente emprestados tiveram seu atributo **disponivel** atualizado para **FALSE**, evidenciando o funcionamento da trigger responsável pela atualização automática da disponibilidade do acervo.
+Inicialmente, a Figura 8 demonstra que os livros previamente emprestados tiveram seu atributo **disponivel** atualizado para **FALSE,** evidenciando o funcionamento da trigger responsável pela atualização automática da disponibilidade do acervo.
 
 Posteriormente, conforme apresentado na Figura 9, ao tentar registrar um novo empréstimo para um livro já indisponível, a trigger **verificar_disponibilidade_livro()** foi acionada antes da inserção do registro. Ao detectar que a obra solicitada não estava disponível, a função gerou uma exceção e interrompeu a operação.
 
