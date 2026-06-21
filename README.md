@@ -97,13 +97,23 @@ Todos os requisitos foram atendidos.
 
 ## Roteiro da Atividade
 
-<p align="center">
-<img src="figuras/Roteiro.png" width="900">
-</p>
+<div align="center">
 
-<p align="center">
+<table>
+<tr>
+<td align="center">
+
+<img src="figuras/Roteiro.png" width="500">
+
+</td>
+</tr>
+</table>
+
+<br>
+
 <em><strong>Figura 1.</strong> Roteiro da atividade proposto pela disciplina.</em>
-</p>
+
+</div>
 
 ---
 
@@ -136,13 +146,23 @@ O modelo conceitual foi elaborado utilizando a notação de Chen.
 - Usuário → Aluno
 - Usuário → Professor
 
-<p align="center">
-<img src="modelos/conceitual.png" width="1000">
-</p>
+<div align="center">
 
-<p align="center">
+<table>
+<tr>
+<td align="center">
+
+<img src="modelos/conceitual.png" width="900">
+
+</td>
+</tr>
+</table>
+
+<br>
+
 <em><strong>Figura 2.</strong> Modelo Conceitual do Sistema de Gerenciamento de Biblioteca.</em>
-</p>
+
+</div>
 
 ---
 
@@ -150,13 +170,23 @@ O modelo conceitual foi elaborado utilizando a notação de Chen.
 
 O modelo lógico foi obtido a partir da transformação do modelo conceitual para o paradigma relacional.
 
-<p align="center">
-<img src="modelos/logico.png" width="1000">
-</p>
+<div align="center">
 
-<p align="center">
+<table>
+<tr>
+<td align="center">
+
+<img src="modelos/logico.png" width="900">
+
+</td>
+</tr>
+</table>
+
+<br>
+
 <em><strong>Figura 3.</strong> Modelo Lógico do Sistema de Gerenciamento de Biblioteca.</em>
-</p>
+
+</div>
 
 ---
 
@@ -175,13 +205,23 @@ O modelo físico foi implementado em PostgreSQL.
 - livro_autor
 - emprestimo
 
-<p align="center">
-<img src="modelos/resumofisico.png" width="1000">
-</p>
+<div align="center">
 
-<p align="center">
+<table>
+<tr>
+<td align="center">
+
+<img src="modelos/resumofisico.png" width="900">
+
+</td>
+</tr>
+</table>
+
+<br>
+
 <em><strong>Figura 4.</strong> Estrutura física implementada no PostgreSQL.</em>
-</p>
+
+</div>
 
 ---
 
@@ -194,11 +234,32 @@ SELECT COUNT(*) AS total_emprestimos
 FROM emprestimo;
 ```
 
+## Consulta com Função Agregada
+
+```sql
+SELECT COUNT(*) AS total_emprestimos
+FROM emprestimo;
+```
+
 ### Resultado
 
-<p align="center">
-<img src="figuras/agregada.png" width="900">
-</p>
+<div align="center">
+
+<table>
+<tr>
+<td align="center">
+
+<img src="figuras/agregada.png" width="700">
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<em><strong>Figura 5.</strong> Resultado da consulta utilizando função agregada.</em>
+
+</div>
 
 ---
 
@@ -217,9 +278,23 @@ HAVING COUNT(l.id_livro) >= 2;
 
 ### Resultado
 
-<p align="center">
-<img src="figuras/having.png" width="900">
-</p>
+<div align="center">
+
+<table>
+<tr>
+<td align="center">
+
+<img src="figuras/having.png" width="700">
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<em><strong>Figura 6.</strong> Resultado da consulta utilizando HAVING.</em>
+
+</div>
 
 ---
 
@@ -234,9 +309,23 @@ Responsável por retornar a quantidade de empréstimos realizados por determinad
 
 ### Resultado
 
-<p align="center">
-<img src="figuras/funcao.png" width="900">
-</p>
+<div align="center">
+
+<table>
+<tr>
+<td align="center">
+
+<img src="figuras/funcao.png" width="700">
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<em><strong>Figura 7.</strong> Resultado da execução da função <code>quantidade_emprestimos</code>.</em>
+
+</div>
 
 ---
 
@@ -248,9 +337,23 @@ Impede a realização de empréstimos quando o livro já se encontra indisponív
 
 ### Resultado
 
-<p align="center">
-<img src="figuras/trigger.png" width="900">
-</p>
+<div align="center">
+
+<table>
+<tr>
+<td align="center">
+
+<img src="figuras/trigger.png" width="700">
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<em><strong>Figura 8.</strong> Resultado da trigger de verificação de disponibilidade.</em>
+
+</div>
 
 ---
 
